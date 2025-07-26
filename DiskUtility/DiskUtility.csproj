@@ -56,12 +56,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Strings\Window.en-us.restext" />
+    <EmbeddedResource Include="Strings\Window.restext" />
+    <EmbeddedResource Include="Strings\Window.zh-hans.restext" />
+    
+    <None Remove="Styles\Button.xaml" />
+    <None Remove="Views\Pages\MainPage.xaml" />
+    
     <PackageReference Include="Microsoft.UI.Xaml" Version="2.8.7" GeneratePathProperty="true" IncludeAssets="none" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools.MSIX" Version="1.7.20250528.2" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
     <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.26100.4188" />
     <PackageReference Include="System.Private.Uri" Version="4.3.2" />
 
+    <Page Include="Styles\Button.xaml" XamlRuntime="$(DefaultXamlRuntime)" />
+    <Page Include="Views\Pages\MainPage.xaml" XamlRuntime="$(DefaultXamlRuntime)" />
+    
     <ProjectCapability Include="Uwp" />
+
+    <PRIResource Include="Strings\en-us\Resources.resjson" />
+    <PRIResource Include="Strings\zh-hans\Resources.resjson" />
 
     <Reference Include="Microsoft.UI.Xaml" HintPath="$(PkgMicrosoft_UI_Xaml)\lib\uap10.0\Microsoft.UI.Xaml.winmd" IsWinMDFile="true" />
     <Reference Include="System.Configuration" />
