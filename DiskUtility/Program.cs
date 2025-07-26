@@ -1,6 +1,7 @@
 ﻿using DiskUtility.Helpers.Root;
 using DiskUtility.Services.Root;
 using DiskUtility.Services.Settings;
+using DiskUtility.Views.Windows;
 using DiskUtility.WindowsAPI.ComTypes;
 using DiskUtility.WindowsAPI.PInvoke.Kernel32;
 using System;
@@ -55,6 +56,8 @@ namespace DiskUtility
                 }
             }
 
+            InitializeProgramResources();
+
             configurationCollection["DpiAwareness"] = "PerMonitorV2";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -63,7 +66,7 @@ namespace DiskUtility
             AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
 
             new App();
-            //Application.Run(new MainWindow());
+            Application.Run(new MainWindow());
         }
 
         /// <summary>
