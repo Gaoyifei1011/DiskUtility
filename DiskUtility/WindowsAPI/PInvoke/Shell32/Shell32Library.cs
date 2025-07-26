@@ -14,6 +14,15 @@ namespace DiskUtility.WindowsAPI.PInvoke.Shell32
         private const string Shell32 = "shell32.dll";
 
         /// <summary>
+        /// 向系统发送应用栏消息。
+        /// </summary>
+        /// <param name="dwMessage">要发送的应用栏消息值。</param>
+        /// <param name="pData">指向 APPBARDATA 结构的指针。 进入和退出时结构的内容取决于 dwMessage 参数中设置的值。</param>
+        /// <returns>此函数返回一个依赖于消息的值。 </returns>
+        [DllImport(Shell32, CharSet = CharSet.Unicode, EntryPoint = "SHAppBarMessage", PreserveSig = true, SetLastError = false)]
+        public static extern IntPtr SHAppBarMessage(ABM dwMessage, ref APPBARDATA pData);
+
+        /// <summary>
         /// 检索由文件夹的 KNOWNFOLDERID 标识的已知文件夹的完整路径。
         /// </summary>
         /// <param name="rfid">对标识文件夹的 KNOWNFOLDERID 的引用。</param>
