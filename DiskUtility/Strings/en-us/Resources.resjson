@@ -1,0 +1,8 @@
+﻿{
+  "AppDescription": "Disk utility",
+  "AppDisplayName": "Disk utility",
+  "AppShortDisplayName": "Disk utility",
+  "PackageDescription": "Device disk information and test utility",
+  "PackageDisplayName": "Disk utility",
+  "ProtocolName": "Disk utility"
+}
